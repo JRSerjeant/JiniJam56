@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/dropper.gd" type="Script" id=1]
+[ext_resource path="res://art/pepper.svg" type="Texture" id=2]
+
+[node name="dropper" type="Node2D"]
+rotation = -0.877901
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="pepper_drop_point" type="Node2D" parent="."]
+position = Vector2( 2.77284, 140.719 )

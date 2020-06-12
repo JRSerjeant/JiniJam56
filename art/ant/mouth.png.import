@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/doughnut.jpg-952809246d5329e4b151becffb51a345.stex"
+path="res://.import/mouth.png-af21ef52c87b2166fb6050b98fa58ec8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/doughnut.jpg"
-dest_files=[ "res://.import/doughnut.jpg-952809246d5329e4b151becffb51a345.stex" ]
+source_file="res://art/ant/mouth.png"
+dest_files=[ "res://.import/mouth.png-af21ef52c87b2166fb6050b98fa58ec8.stex" ]
 
 [params]
 

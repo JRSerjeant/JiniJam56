@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://donut/donut.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dropper/dropper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/ant_controller.gd" type="Script" id=3]
+
+[node name="game" type="Node"]
+
+[node name="donut" parent="." instance=ExtResource( 1 )]
+position = Vector2( 680, 344 )
+
+[node name="drops" type="Node" parent="."]
+
+[node name="ant_controller" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="spawn_points" type="Node2D" parent="ant_controller"]
+
+[node name="spawn_pont_0" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 64, 320 )
+
+[node name="spawn_pont_1" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1232, 88 )
+
+[node name="dropper" parent="." instance=ExtResource( 2 )]
