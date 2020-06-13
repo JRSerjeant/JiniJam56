@@ -20,5 +20,6 @@ func _input(event):
 	if event.is_action_pressed("drop"):
 		var new_drop : Node2D = currnet_drop.instance()
 		new_drop.position = currnet_drop_point.global_position
+		new_drop.drop_type = "pepper"
 		Singletons.game_scene.add_child(new_drop)
 

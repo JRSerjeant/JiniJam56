@@ -17,9 +17,44 @@ script = ExtResource( 3 )
 [node name="spawn_points" type="Node2D" parent="ant_controller"]
 
 [node name="spawn_pont_0" type="Node2D" parent="ant_controller/spawn_points"]
-position = Vector2( 64, 320 )
+position = Vector2( -35.1792, 344 )
 
 [node name="spawn_pont_1" type="Node2D" parent="ant_controller/spawn_points"]
-position = Vector2( 1232, 88 )
+position = Vector2( 680, -48.3391 )
+
+[node name="spawn_pont_2" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1457.79, 298.4 )
+
+[node name="spawn_pont_3" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 728, 827.425 )
+
+[node name="spawn_pont_4" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( -35.1792, 596.802 )
+
+[node name="spawn_pont_5" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( -35.1792, 135.556 )
+
+[node name="spawn_pont_6" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 260.725, -48.3391 )
+
+[node name="spawn_pont_7" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1109.36, -48.3391 )
+
+[node name="spawn_pont_8" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1457.79, 135.556 )
+
+[node name="spawn_pont_9" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1457.79, 596.802 )
+
+[node name="spawn_pont_10" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 1109.36, 842.499 )
+
+[node name="spawn_pont_11" type="Node2D" parent="ant_controller/spawn_points"]
+position = Vector2( 230.578, 842.499 )
+
+[node name="ants" type="Node2D" parent="ant_controller"]
+
+[node name="spawn_timer" type="Timer" parent="ant_controller"]
+one_shot = true
 
 [node name="dropper" parent="." instance=ExtResource( 2 )]

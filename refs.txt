@@ -1,3 +1,4 @@
-Ant:	https://opengameart.org/content/walking-ant-with-parts-and-rigged-spriter-file
-Plate:	https://freesvg.org/vector-clip-art-of-empty-white-plate
-Papper:	https://freesvg.org/pepper-and-salt-mill
+Ant:		https://opengameart.org/content/walking-ant-with-parts-and-rigged-spriter-file
+Plate:		https://freesvg.org/vector-clip-art-of-empty-white-plate
+Papper:		https://freesvg.org/pepper-and-salt-mill
+Exclamation:	https://opengameart.org/content/2d-exclamation-marks

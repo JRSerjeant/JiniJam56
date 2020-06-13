@@ -112,7 +112,6 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_L3"]
 position = Vector2( -39.3494, -88.1218 )
 rotation = 1.39626
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="Leg_L1" type="Node2D" parent="Node2D"]
@@ -135,7 +134,6 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_L1"]
 position = Vector2( -72, 160 )
 rotation = 1.39626
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="Leg_R1" type="Node2D" parent="Node2D"]
@@ -159,7 +157,6 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_R1"]
 position = Vector2( 36.5, -88 )
 rotation = -1.64934
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="Leg_R2" type="Node2D" parent="Node2D"]
@@ -183,7 +180,6 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_R2"]
 position = Vector2( 31.173, 8.87821 )
 rotation = -1.64934
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="Leg_R3" type="Node2D" parent="Node2D"]
@@ -207,7 +203,6 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_R3"]
 position = Vector2( 71.173, 167.878 )
 rotation = -1.64934
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="Leg_L2" type="Node2D" parent="Node2D"]
@@ -230,9 +225,15 @@ texture = ExtResource( 9 )
 [node name="2-1_lowerLeg" type="Sprite" parent="Node2D/Leg_L2"]
 position = Vector2( -31.3495, 8.87822 )
 rotation = 1.39626
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -213.333, 0 )
+
+[node name="eating_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true

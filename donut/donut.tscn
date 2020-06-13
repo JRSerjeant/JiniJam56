@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/donut.png" type="Texture" id=1]
 [ext_resource path="res://art/donut_plate.svg" type="Texture" id=2]
+[ext_resource path="res://scripts/donut.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 42.8845
 
 [node name="donut" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -21,6 +23,8 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="eating_tween" type="Tween" parent="donut"]
 
 [node name="donut_collider" type="KinematicBody2D" parent="."]
 
