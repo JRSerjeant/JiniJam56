@@ -5,7 +5,8 @@ var pepper_scene = load("res://dropper/drop_pepper.tscn")
 var pepper_drop_point
 var currnet_drop
 var currnet_drop_point : Node2D 
-
+export var peper_black : Texture
+export var peper_red : Texture
 
 
 func _ready():
@@ -20,6 +21,9 @@ func _input(event):
 	if event.is_action_pressed("drop"):
 		var new_drop : Node2D = currnet_drop.instance()
 		new_drop.position = currnet_drop_point.global_position
-		new_drop.drop_type = "pepper"
+		if($Sprite.texture == peper_black):
+			new_drop.drop_type = "pepper"
+		else:
+			new_drop.drop_type = "cayenne"
 		Singletons.game_scene.add_child(new_drop)
 

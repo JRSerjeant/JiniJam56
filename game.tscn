@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://donut/donut.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dropper/dropper.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/ant_controller.gd" type="Script" id=3]
+[ext_resource path="res://art/pepper.svg" type="Texture" id=4]
+[ext_resource path="res://scripts/pepper_switch.gd" type="Script" id=5]
+[ext_resource path="res://art/pepper_red.svg" type="Texture" id=6]
 
 [node name="game" type="Node"]
 
 [node name="donut" parent="." instance=ExtResource( 1 )]
-position = Vector2( 680, 344 )
+position = Vector2( 632, 298.4 )
 
 [node name="drops" type="Node" parent="."]
 
@@ -58,3 +61,33 @@ position = Vector2( 230.578, 842.499 )
 one_shot = true
 
 [node name="dropper" parent="." instance=ExtResource( 2 )]
+
+[node name="pepper_button" type="Button" parent="."]
+anchor_left = 0.017
+anchor_top = 0.607
+anchor_right = 0.089
+anchor_bottom = 0.977
+margin_left = 0.574141
+margin_top = -0.123047
+margin_right = -12.7779
+margin_bottom = -0.283081
+icon = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cayenne_button" type="Button" parent="."]
+anchor_left = 0.929
+anchor_top = 0.607
+anchor_right = 0.992
+anchor_bottom = 0.977
+margin_left = 1.61145
+margin_top = -0.123047
+margin_right = 0.553467
+margin_bottom = -0.283081
+icon = ExtResource( 6 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

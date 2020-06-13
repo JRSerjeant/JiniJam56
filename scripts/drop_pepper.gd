@@ -1,16 +1,16 @@
 extends KinematicBody2D
 
 var drop_type = ""
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var life_time = 3
+export var cayenne : Texture
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$life_timer.wait_time = life_time
+	$life_timer.connect("timeout",self,"queue_free")
+	if(drop_type == "cayenne"):
+		$Sprite.texture = cayenne
+		self.set_collision_layer_bit(1,false)
+		self.set_collision_layer_bit(2,true)
+		
+func kill():
+	$life_timer.start()

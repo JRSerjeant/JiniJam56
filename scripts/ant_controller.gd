@@ -32,6 +32,7 @@ func AddAnt():
 	var new_ant : Node2D = ant_scene.instance()
 	var index = rng.randi_range(0, spawn_points.get_child_count() -1)	
 	print(spawn_points.get_child(index))
+	new_ant.isRed = rng.randi_range(0,1)
 	new_ant.position = spawn_points.get_child(index).position
 	new_ant.spawn_location = spawn_points.get_child(index).position
 	ant_ducket.add_child(new_ant)

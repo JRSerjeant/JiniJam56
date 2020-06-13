@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/dropper.gd" type="Script" id=1]
 [ext_resource path="res://art/pepper.svg" type="Texture" id=2]
+[ext_resource path="res://art/pepper_red.svg" type="Texture" id=3]
 
 [node name="dropper" type="Node2D"]
 rotation = -0.877901
 script = ExtResource( 1 )
+peper_black = ExtResource( 2 )
+peper_red = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
