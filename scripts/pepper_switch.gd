@@ -9,14 +9,20 @@ func _ready():
 	dropper = get_node("/root/game/dropper")
 	peper_Progressbar = get_node("/root/game/peper_ProgressBar")
 	cayenne_Progressbar = get_node("/root/game/cayenne_ProgressBar")
-	
+
+func _process(delta):
+	if(Singletons.gameState == Singletons.gameStates.GameOver):
+		peper_Progressbar.value = 100
+		cayenne_Progressbar.value = 100
+
 func _pressed():
-	var currenttexture = dropper.get_node("Sprite").texture
-	if(currenttexture != self.icon):
-		dropper.get_node("Sprite").texture = self.icon
-		dropper.switch_progress_bar()
-	if(currenttexture == self.icon):
-		dropper.increase_progress_bar()
+	if(Singletons.gameState == Singletons.gameStates.Running):
+		var currenttexture = dropper.get_node("Sprite").texture
+		if(currenttexture != self.icon):
+			dropper.get_node("Sprite").texture = self.icon
+			dropper.switch_progress_bar()
+		if(currenttexture == self.icon):
+			dropper.increase_progress_bar()
 		
 func _on_pepper_button_mouse_entered():
 	Singletons.allow_drop = false

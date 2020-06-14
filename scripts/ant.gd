@@ -39,31 +39,31 @@ func _ready():
 	$eating_timer.connect("timeout", self, "eat_donut")
 
 func _process(delta):
-	if(Singletons.gameState == "GameOver" && state != states.GameOver):
+	if(Singletons.gameState == Singletons.gameStates.GameOver && state != states.GameOver):
 		change_state(states.GameOver, state)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	match state:
-		states.walkingIn:
-			var collide = move_and_collide(vel * delta)
-			if collide && collide.collider.get("drop_type") && collide.collider.drop_type == runs_away_from:
-				collide.collider.kill()
-				change_state(states.runningAway, state)
-			if collide && collide.collider.name == "donut_collider":
-				change_state(states.eating, state)
-		states.runningAway:
-			var collide = move_and_collide(vel * delta)
-			if not get_node("notifier").is_on_screen():
-				queue_free()
-		states.eating:
-			if(bites_taken == total_bites_allowed):
-					change_state(states.runningAway,state)
-			if($eating_timer.is_stopped()):
-				if(bites_taken < total_bites_allowed):
-					bites_taken = bites_taken + 1
-					print(bites_taken)
-					$eating_timer.start()
+	if(Singletons.gameState == Singletons.gameStates.Running):
+		match state:
+			states.walkingIn:
+				var collide = move_and_collide(vel * delta)
+				if collide && collide.collider.get("drop_type") && collide.collider.drop_type == runs_away_from:
+					collide.collider.kill()
+					change_state(states.runningAway, state)
+				if collide && collide.collider.name == "donut_collider":
+					change_state(states.eating, state)
+			states.runningAway:
+				var collide = move_and_collide(vel * delta)
+				if not get_node("notifier").is_on_screen():
+					queue_free()
+			states.eating:
+				if(bites_taken == total_bites_allowed):
+						change_state(states.runningAway,state)
+				if($eating_timer.is_stopped()):
+					if(bites_taken < total_bites_allowed):
+						bites_taken = bites_taken + 1
+						$eating_timer.start()
 
 func change_state(newState, currentState):
 	# Exit current state
@@ -81,7 +81,6 @@ func change_state(newState, currentState):
 			vel = (exit_location- position) * exit_speed
 		states.eating:
 			$CollisionShape2D.disabled = true
-			print("Now Eating")
 		states.GameOver:
 			print("Game is over stop any actions")
 	state = newState

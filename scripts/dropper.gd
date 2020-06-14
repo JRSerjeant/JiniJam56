@@ -24,16 +24,17 @@ func _process(delta):
 	position = get_global_mouse_position()
 	
 func _input(event):
-	if event.is_action_pressed("drop") && Singletons.allow_drop:
+	if event.is_action_pressed("drop") && Singletons.allow_drop && Singletons.gameState == Singletons.gameStates.Running:
 		var new_drop : Node2D = currnet_drop.instance()
 		new_drop.position = currnet_drop_point.global_position
-		if($Sprite.texture == peper_black):
-			new_drop.drop_type = "pepper"
-		else:
-			new_drop.drop_type = "cayenne"
-			
-		current_Progressbar.value = current_Progressbar.value - bar_reduce_ammount
-		Singletons.game_scene.add_child(new_drop)
+		if(current_Progressbar.value > 0):
+			if($Sprite.texture == peper_black):
+				new_drop.drop_type = "pepper"
+			else:
+				new_drop.drop_type = "cayenne"
+				
+			current_Progressbar.value = current_Progressbar.value - bar_reduce_ammount
+			Singletons.game_scene.add_child(new_drop)
 
 func switch_progress_bar():
 	var new_ProgressBar

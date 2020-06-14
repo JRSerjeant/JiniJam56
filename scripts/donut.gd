@@ -15,14 +15,19 @@ func _process(delta):
 	$donut.scale = Vector2(amout_remaining,amout_remaining)
 	if($donut.scale.x <= 0.0 && $donut.scale.y <= 0.0):
 		allow_eat = false
-		Singletons.gameState = "GameOver"
+		Singletons.gameState = Singletons.gameStates.GameOver
 
 func eat():
 	if(allow_eat):
-		print("Being Eatten!")
 		var rand = Vector2()
 		rand.x = rand_range(-amplitude,amplitude)
 		rand.y = rand_range(-amplitude,amplitude)
 		amout_remaining = amout_remaining - reduction_per_bite
 		$donut/eating_tween.interpolate_property($donut, "offset", $donut.offset, rand, 0.1,Tween.TRANS_SINE, Tween.EASE_IN)
 		$donut/eating_tween.start()
+
+func restart():
+	$donut.scale = Vector2(0.05,0.05)
+	amout_remaining = 0.05
+	$donut.offset = Vector2(0,0)
+	allow_eat = true
