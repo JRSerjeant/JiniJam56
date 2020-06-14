@@ -1,6 +1,8 @@
 extends Node
 
 
+var allow_drop : bool = true
+var bar_reduce_ammount = 10
 var donut
 var game_scene
 var rng = RandomNumberGenerator.new()

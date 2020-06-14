@@ -91,3 +91,31 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="peper_ProgressBar" type="ProgressBar" parent="."]
+margin_left = 120.0
+margin_top = 750.0
+margin_right = 404.0
+margin_bottom = 777.0
+rect_rotation = 270.0
+step = 1.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cayenne_ProgressBar" type="ProgressBar" parent="."]
+margin_left = 1233.56
+margin_top = 750.053
+margin_right = 1517.56
+margin_bottom = 777.053
+rect_rotation = 270.0
+step = 1.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="pepper_button" to="pepper_button" method="_on_pepper_button_mouse_entered"]
+[connection signal="mouse_exited" from="pepper_button" to="pepper_button" method="_on_pepper_button_mouse_exited"]
+[connection signal="mouse_entered" from="cayenne_button" to="cayenne_button" method="_on_cayenne_button_mouse_entered"]
+[connection signal="mouse_exited" from="cayenne_button" to="cayenne_button" method="_on_cayenne_button_mouse_exited"]
